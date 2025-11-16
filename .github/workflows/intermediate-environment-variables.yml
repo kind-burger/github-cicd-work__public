@@ -5,6 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       ACTOR: ${{ github.actor }} # コンテキストの値を環境変数へセット
+      PR_TITLE: ${{ github.event.pull_request.title }} # プルリクエストタイトルを環境変数へセット
     steps:
-      - run: echo "${ACTOR}"     # 環境変数経由でコンテキストのプロパティを参照
-      - run: echo ${{ github.event.head_commit.message }}
+      - run: echo "${ACTOR}"
+      - run: echo "${PR_TITLE}"
