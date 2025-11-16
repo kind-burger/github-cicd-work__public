@@ -7,6 +7,13 @@ on:
         required: true             # 必須入力
         default: 'Hello, world!'   # デフォルト値
         type: string               # 入力タイプ
+      log-level:
+        type: choice
+        options:
+          - debug
+          - info
+          - warning
+          - error
 jobs:
   run:
     runs-on: ubuntu-latest        # ランナー（Ubuntuで実行）
